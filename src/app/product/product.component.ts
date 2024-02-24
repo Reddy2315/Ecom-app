@@ -12,6 +12,7 @@ import { Router } from "@angular/router";
 export class ProductComponent implements OnInit {
 
     products: any[] = [];
+    
 
     constructor(private productService: ProductService, private router: Router) {
 
@@ -34,14 +35,40 @@ export class ProductComponent implements OnInit {
         this.router.navigate(['/update-product', id]);
     }
 
-    deleteProduct(id: any) {
-        this.productService.deleteProduct(id).subscribe(data => {
-            console.log(data);
+    // deleteProduct(id: any) {
+    //     this.productService.deleteProduct(id).subscribe(data => {
+    //         console.log(data);
+    //         this.getProductsList();
+    //     })
+    // }
+
+    confirmDelete(id: any): void {
+        // Display confirmation alert
+        if (confirm("Are you sure you want to delete this product?")) {
+          // If user confirms, call the deleteProduct method
+          this.deleteProduct(id);
+        }
+      }
+    
+      deleteProduct(id:any): void {
+        // Implement the logic to delete the product here
+        // For example, call a method from the ProductService
+        this.productService.deleteProduct(id).subscribe(
+          () => {
+            console.log('Product deleted successfully.');
+            // Optionally, navigate to another page after deletion
             this.getProductsList();
-        })
-    }
+            
+          },
+          (error) => {
+            console.error('Error deleting product:', error);
+          }
+        );
+      }
+
     productDetails(id: any) {
         this.router.navigate(['/product-details', id]);
+        
     }
     //    msg:String= "http://localhost:8081/Ecom/ProductResource/products"; 
 

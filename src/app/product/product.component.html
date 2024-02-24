@@ -32,7 +32,7 @@
                 <td>{{product.price}}</td>
                 <td>  
                     <input type="submit" class="btn btn-success" (click)="updateProduct(product.id)" role="button" value="Update">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <input type="submit" class="btn btn-danger" (click)="deleteProduct(product.id)" role="button" value="Delete"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input type="submit" class="btn btn-danger" (click)="confirmDelete(product.id)" role="button" value="Delete"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     <input type="submit" class="btn btn-warning" (click)="productDetails(product.id)" role="button" value="View"/>
                 </td>
              
@@ -41,5 +41,6 @@
     </table>
 </div>    
 </div>
+
 </body>
 </html>

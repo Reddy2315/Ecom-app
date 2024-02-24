@@ -1,13 +1,23 @@
-<h3>View Product Details</h3>
-<div>
-    <div>
-        <label for=""><b>Product Id : </b></label>{{product.id}}
-    </div>
-    <div>
-    <label for=""><b>Product Name : </b></label>{{product.name}}
-    </div>
-    <div>
-        <label for=""><b>Product Price : </b></label>{{product.price}}
-    </div>    
 
+<div class="container">
+<!-- <button class="btn btn-secondary mb-4" (click)="goBack()">&#8592; </button> -->
+<button class="btn btn-link " (click)="goBack()">
+    <!-- Font Awesome back arrow icon -->
+    <i class="fas fa-arrow-left arrow-icon "></i> 
+</button>
+<div class="mt-3 ms-3">
+<h3>View Product Details</h3>
+
+    <div class="text-dark mt-4">
+        <div >
+            <label for=""><b >Product Id : </b></label> <span class="ms-2 text-dark">{{product.id}}</span>
+        </div>
+        <div>
+            <label for=""><b>Product Name : </b></label> <span class="ms-2">{{product.name}}</span>
+        </div>
+        <div>
+            <label for=""><b>Product Price : </b></label> <span class="ms-2">{{product.price}}</span>
+        </div>    
     </div>
+</div>
+</div>

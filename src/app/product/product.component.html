@@ -1,0 +1,45 @@
+
+<!-- <p>{{id}}</p>
+<p>{{name}}</p>
+<p>{{price}}</p> -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products</title>
+</head>
+<body>
+    <h1>Product Info</h1>
+    <hr /> 
+    <div class="container">
+        <div class="table-container">
+    <a class="btn btn-primary  mb-2" routerLink="add-product">Add Product</a>
+    <table class="table table-bordered table-striped table-hover border-radius table-container ">
+        <thead class="bg-primary text-white">
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let product of products">
+                <td>{{product.id}}</td>
+                <td>{{product.name}}</td>
+                <td>{{product.price}}</td>
+                <td>  
+                    <input type="submit" class="btn btn-success" (click)="updateProduct(product.id)" role="button" value="Update">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input type="submit" class="btn btn-danger" (click)="deleteProduct(product.id)" role="button" value="Delete"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input type="submit" class="btn btn-warning" (click)="productDetails(product.id)" role="button" value="View"/>
+                </td>
+             
+            </tr>
+        </tbody>
+    </table>
+</div>    
+</div>
+</body>
+</html>

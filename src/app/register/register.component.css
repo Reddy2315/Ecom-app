@@ -1,0 +1,29 @@
+.container{
+    background-color: #edecec; 
+    padding: 15px; 
+    width: 80dvh;
+    border-radius: 15px;
+    margin-top: 30px;
+}
+div{
+    margin-top: 15px;
+    text-align: start;
+    align-items: flex-start;
+}
+input{
+    border-radius: 5px;
+}
+h2{
+    color: blue;
+    text-align: center;
+}
+p{
+    text-align: center; 
+}
+span{
+    font-size: small;
+    color: red;
+    font-weight: lighter;
+    text-align: start;
+    align-items: flex-start;
+}

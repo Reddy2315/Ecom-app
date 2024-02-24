@@ -1,0 +1,31 @@
+<div class="container ">
+<h3>Add Product</h3>
+<form action="" class="m-5" #myForm="ngForm" (ngSubmit)="onSubmit(myForm)">
+    <div class="form-group">
+        <label for="id">Id</label>
+        <input type="text" class="form-control" id="id" #id="ngModel" [(ngModel)]="product.id" name="id" required="required" minlength="3" placeholder="Enter Product Id">
+    </div>
+    <span *ngIf="!id.valid && (id.dirty || id.touched)">
+        *Id must be required!..
+    </span> <br>
+    <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" class="form-control" id="name" #name="ngModel"  [(ngModel)]="product.name" name="name"
+        required="required" minlength="4" placeholder="Enter Product Name">
+    </div>
+    <span *ngIf="!name.valid && (name.dirty || name.touched)">
+        *Name must be required!..
+    </span> <br>
+    <div class="form-group">
+        <label for="price">Price</label>
+        <input type="text" class="form-control" id="price" #price="ngModel"  [(ngModel)]="product.price" name="price"
+        required="required" minlength="3" placeholder="Enter Product Price">
+    </div>
+    <span *ngIf="!price.valid && (price.dirty || price.touched)">
+        *Price must be required!..
+    </span><br>
+    <br>
+    <input class="btn btn-success" type="submit" value="Submit">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <input type="reset" class="btn btn-secondary" role="button" value="Clear"/>
+</form>
+</div>
